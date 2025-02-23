@@ -1,21 +1,14 @@
 local plugins = {
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    ft = {"python"},
-    opts = function()
-      return require "custom.configs.null-ls"
-    end,
-  },
-  {
-    "williamboman/mason.nvim",
-    opts = {
-     ensured_installed = {
-        "pyright",
-        "mypy",
-        "ruff",
-        "black",
-      },
+    "nvimdev/guard.nvim",
+    -- Builtin configuration, optional
+    dependencies = {
+        "nvimdev/guard-collection",
     },
+    config = function ()
+      return require "custom.configs.guard"
+    end,
+    lazy=false
   },
   {
     "neovim/nvim-lspconfig",
@@ -27,6 +20,6 @@ local plugins = {
   {
     "tpope/vim-fugitive",
     lazy=false
-  },
+  }
 }
 return plugins

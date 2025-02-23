@@ -30,7 +30,10 @@ opt.mouse = "a"
 -- Numbers
 opt.number = true
 opt.numberwidth = 2
+opt.relativenumber = true
 opt.ruler = false
+opt.scrolloff = 8
+
 
 -- disable nvim intro
 opt.shortmess:append "sI"
